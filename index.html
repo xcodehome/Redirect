@@ -1,1 +1,25 @@
-<h1>Hello World !</h1>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirection en cours...</title>
+    <script>
+        // On définit la nouvelle destination (sans le hash)
+        const nouvelleDestination = "https://chantier.bycn.fr";
+
+        // On récupère le hash actuel (ex: #section1)
+        const hashActuel = window.location.hash;
+
+        // On redirige en combinant les deux
+        window.location.replace(nouvelleDestination + hashActuel);
+    </script>
+</head>
+<body>
+    <p>Si vous n'êtes pas redirigé, <a id="fallback" href="#">cliquez ici</a>.</p>
+    
+    <script>
+        // Mise à jour du lien de secours au cas où le JS mettrait du temps
+        document.getElementById('fallback').href = nouvelleDestination + hashActuel;
+    </script>
+</body>
+</html>
